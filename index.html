@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-tour-standalone.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pesquisa de livros</title>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Biblioteca Universitária</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Pesquise o livro que você deseja obter informações, a busca pode ser efetuada pelo nome do autor(es), assuto
+                    ou pelo código ISBN.</p>
+            </ul>
+
+            <form id="formSidebar" action="javascript:;">
+                <div id="msgErrorSidebar" class="alert alert-danger d-none">
+
+                </div>
+                <div class="form-group">
+                    <label for="formInputAutor">Autor(es)</label>
+                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Para vários autores utilize ; (ponto e vírgula) para separar.">
+                        <i class="fa fa-question"></i>
+                    </span>
+                    <input type="text" class="form-control" id="formInputAutor" placeholder="Nome do Autor">
+                    <div class="invalid-feedback">
+                        Preencha pelo menos um campo!
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="formInputAssunto">Assunto</label>
+
+                    <input type="text" class="form-control" id="formInputAssunto" placeholder="Título do Livro">
+                    <div class="invalid-feedback">
+                        Preencha pelo menos um campo!
+                    </div>
+                </div>
+                <p>
+                    <a class="busca-avancada" data-toggle="collapse" href="#collapseBuscaAvanc" role="" aria-expanded="" aria-controls="">Consulta avançada</a>
+                </p>
+                <div class="row">
+
+                    <div class="col">
+                        <div class="collapse" id="collapseBuscaAvanc">
+                            <div class="form-group">
+                                <label for="formInputISBN">ISBN</label>
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Código internacional de identificação do livro. Formato: ISBN 978-85-333-0227-3">
+                                    <i class="fa fa-question"></i>
+                                </span>
+                                <input type="text" class="form-control" id="formInputISBN" placeholder="Código ISBN">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btnSidebarAjuda" class="btn btn-warning mb-2">Ajuda</button>
+                <button id="btnSidebarLimpar" type="reset" class="btn btn-danger mb-2">Limpar</button>
+                <button id="btnSidebarPesquisar" type="submit" class="btn btn-success mb-2">Pesquisar</button>
+            </form>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light rounded">
+                <div class="container-fluid">
+
+
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a id="link-ajuda" class="nav-link" href="javascript:;">Ajuda
+                                    <span class="fa fa-question"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="form_search">
+                <h1>Biblioteca Universitária</h1>
+                <p>Pesquise o livro que você deseja obter informações, a busca pode ser efetuada pelo nome do autor(es), assuto
+                    ou utilizando o código ISBN.</p>
+                <div class="card mx-auto">
+
+                    <form action="javascript:;">
+                        <div class="card-body">
+                            <div id="mgsError" class="alert alert-danger d-none">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="autor">Autor</label>
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Para vários autores utilize ; (ponto e vírgula) para separar.">
+                                    <i class="fa fa-question"></i>
+                                </span>
+                                <input id="autor" type="autor" class="form-control" id="autor">
+                            </div>
+                            <div class="form-group">
+                                <label for="assunto">Assunto</label>
+                                <input id="assunto" type="assunto" class="form-control" id="assunto">
+                            </div>
+                            <p>
+                                <a data-toggle="collapse" id="consulta-avanc" href="#collapseBuscaAvancMain" role="" aria-expanded="" aria-controls="">Consulta avançada</a>
+                            </p>
+
+                            <div class="collapse" id="collapseBuscaAvancMain">
+                                <div class="form-group">
+                                    <label for="formInputISBN">ISBN</label>
+                                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Código internacional de identificação do livro. Formato: ISBN 978-85-333-0227-3">
+                                        <i class="fa fa-question"></i>
+                                    </span>
+                                    <input id="isbn" type="text" class="form-control" id="formInputISBN" placeholder="Código ISBN">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer ">
+                            <div class="text-right">
+                                <button id="btnAjuda" class="btn btn-warning mb-2">Ajuda</button>
+                                <button id="btnLimpar" type="reset" class="btn btn-danger mb-2">Limpar</button>
+                                <button id="btnPesquisar" type="submit " class="btn btn-success mb-2">Pesquisar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="result_search" hidden>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Próximo</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="col-sm-4 float-left mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">John Doe</h4>
+                                    <p class="card-text">Some example text.</p>
+                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">John Doe</h4>
+                                    <p class="card-text">Some example text.</p>
+                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">John Doe</h4>
+                                    <p class="card-text">Some example text.</p>
+                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">John Doe</h4>
+                                    <p class="card-text">Some example text.</p>
+                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">John Doe</h4>
+                                    <p class="card-text">Some example text.</p>
+                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">John Doe</h4>
+                                    <p class="card-text">Some example text.</p>
+                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-5 float-right">
+
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-end">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Próximo</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <script src="assets/vendor/jquery.min.js" charset="utf-8"></script>
+    <script src="assets/vendor/popper.min.js" charset="utf-8"></script>
+    <script src="assets/vendor/bootstrap.min.js" charset="utf-8"></script>
+    <script src="assets/vendor/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
+    <script src="assets/js/functions.js" charset="utf-8"></script>
+</body>
+
+</html>
