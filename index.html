@@ -93,13 +93,13 @@
                 </div>
             </nav>
 
-            <div class="form_search">
+            <div id="form_search">
                 <h1>Biblioteca Universitária</h1>
                 <p>Pesquise o livro que você deseja obter informações, a busca pode ser efetuada pelo nome do autor(es), assuto
                     ou utilizando o código ISBN.</p>
                 <div class="card mx-auto">
 
-                    <form action="javascript:;">
+                    <form id="form_search" action="javascript:;">
                         <div class="card-body">
                             <div id="mgsError" class="alert alert-danger d-none">
 
@@ -140,7 +140,11 @@
                 </div>
             </div>
 
-            <div class="result_search" hidden>
+            <div class="mx-auto">
+                <div id="loader" class="loader  d-none"></div> 
+            </div>
+
+            <div class="result_search animate-bottom" id="result" style="display:none;">
                 <div class="row">
                     <div class="col-sm-12">
                         <nav aria-label="Page navigation example">
@@ -176,9 +180,9 @@
                             <div class="card">
                                 <img class="card-img-top" src="img-livro.jpg" alt="Card image">
                                 <div class="card-body">
-                                    <h4 class="card-title">John Doe</h4>
-                                    <p class="card-text">Some example text.</p>
-                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
                                 </div>
                             </div>
                         </div>
@@ -186,9 +190,9 @@
                             <div class="card">
                                 <img class="card-img-top" src="img-livro.jpg" alt="Card image">
                                 <div class="card-body">
-                                    <h4 class="card-title">John Doe</h4>
-                                    <p class="card-text">Some example text.</p>
-                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
                                 </div>
                             </div>
                         </div>
@@ -196,9 +200,9 @@
                             <div class="card">
                                 <img class="card-img-top" src="img-livro.jpg" alt="Card image">
                                 <div class="card-body">
-                                    <h4 class="card-title">John Doe</h4>
-                                    <p class="card-text">Some example text.</p>
-                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
                                 </div>
                             </div>
                         </div>
@@ -206,9 +210,9 @@
                             <div class="card">
                                 <img class="card-img-top" src="img-livro.jpg" alt="Card image">
                                 <div class="card-body">
-                                    <h4 class="card-title">John Doe</h4>
-                                    <p class="card-text">Some example text.</p>
-                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
                                 </div>
                             </div>
                         </div>
@@ -216,9 +220,49 @@
                             <div class="card">
                                 <img class="card-img-top" src="img-livro.jpg" alt="Card image">
                                 <div class="card-body">
-                                    <h4 class="card-title">John Doe</h4>
-                                    <p class="card-text">Some example text.</p>
-                                    <a href="#" class="btn btn-primary">See Profile</a>
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 float-left  mt-5">
+                            <div class="card">
+                                <img class="card-img-top" src="img-livro.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h4 class="card-title">Livro 1</h4>
+                                    <p class="card-text">Descrição do livro.</p>
+                                    <a href="#" class="btn btn-primary">Ver mais</a>
                                 </div>
                             </div>
                         </div>

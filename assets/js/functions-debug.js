@@ -20,7 +20,7 @@ $(document).ready(function () {
         ajudaSidebar();
     })
 
-    //   $("#sidebar").addClass("d-none");
+    $("#sidebar").addClass("d-none");
 
 
 
@@ -166,6 +166,8 @@ $(document).ready(function () {
         console.log(assunto)
         console.log(autor == "" && assunto == "" && isbn == "")
 
+        console.log(isbn)
+        console.log(isbn != "" && checkISBN(isbn))
         if (isbn != "" && checkISBN(isbn)) {
             $("#mgsError").removeClass("d-none");
             $("#mgsError").html("ISBN Invalido! :(")
@@ -178,7 +180,23 @@ $(document).ready(function () {
             return;
         }
 
+        $("#sidebar").removeClass("d-none");
+        //$('#sidebar').toggleClass('active');
+        $("#form_search").addClass("d-none");
+        $("#loader").removeClass("d-none");
+        show_result();
+
     });
+
+
+    function show_result() {
+        setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+        $("#loader").addClass("d-none");
+        $("#result").addClass("d-block");
+    }
 
 
 });
