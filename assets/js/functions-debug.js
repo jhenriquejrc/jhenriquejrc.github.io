@@ -150,12 +150,19 @@ $(document).ready(function () {
             return;
         }
 
+        var regex = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
+        if (!regex.test(autor)) {
+            $("#msgErrorSidebar").removeClass("d-none");
+            $("#msgErrorSidebar").html("<strong>O nome do autor não pode conter números :(</strong>")
+            return
+        }
+
         //$('#sidebar').toggleClass('active');
         $("#result").removeClass("d-block");
         $("#result").addClass("d-none");
         console.log("teste")
         $("#loader").removeClass("d-none");
-      
+
         show_result();
 
     });
@@ -179,6 +186,13 @@ $(document).ready(function () {
             $("#mgsError").removeClass("d-none");
             $("#mgsError").html("<strong>Preencha pelo menos um campo para pesquisar! :(</strong>")
             return;
+        }
+        var regex = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/;
+
+        if (!regex.test(autor)) {
+            $("#mgsError").removeClass("d-none");
+            $("#mgsError").html("<strong>O nome do autor não pode conter números :(</strong>")
+            return
         }
 
         $("#sidebar").removeClass("d-none");
