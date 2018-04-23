@@ -151,8 +151,11 @@ $(document).ready(function () {
         }
 
         //$('#sidebar').toggleClass('active');
-      
+        $("#result").removeClass("d-block");
+        $("#result").addClass("d-none");
+        console.log("teste")
         $("#loader").removeClass("d-none");
+      
         show_result();
 
     });

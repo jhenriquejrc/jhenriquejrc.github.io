@@ -137,9 +137,6 @@ $(document).ready(function () {
         var autor = $("#formInputAutor").val();
         var assunto = $("#formInputAssunto").val();
         var isbn = $("#formInputISBN").val();
-        console.log(autor)
-        console.log(assunto)
-        console.log(autor == "" && assunto == "" && isbn == "")
 
         if (isbn != "" && checkISBN(isbn)) {
             $("#msgErrorSidebar").removeClass("d-none");
@@ -153,6 +150,14 @@ $(document).ready(function () {
             return;
         }
 
+        //$('#sidebar').toggleClass('active');
+        $("#result").removeClass("d-block");
+        $("#result").addClass("d-none");
+        console.log("teste")
+        $("#loader").removeClass("d-none");
+      
+        show_result();
+
     });
 
     $("#form_search").on("submit", function () {
@@ -162,12 +167,8 @@ $(document).ready(function () {
         var autor = $("#autor").val();
         var assunto = $("#assunto").val();
         var isbn = $("#isbn").val();
-        console.log(autor)
-        console.log(assunto)
-        console.log(autor == "" && assunto == "" && isbn == "")
 
-        console.log(isbn)
-        console.log(isbn != "" && checkISBN(isbn))
+
         if (isbn != "" && checkISBN(isbn)) {
             $("#mgsError").removeClass("d-none");
             $("#mgsError").html("ISBN Invalido! :(")
