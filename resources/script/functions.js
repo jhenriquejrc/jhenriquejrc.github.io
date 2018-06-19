@@ -162,7 +162,7 @@ $(document).ready(function () {
         $("#result").addClass("d-none");
         console.log("teste")
         $("#loader").removeClass("d-none");
-
+        $("#msg_termo").val("Resultado(s) para o termo pesquisado" + autor + " " + assunto);
         show_result();
 
     });
@@ -194,6 +194,8 @@ $(document).ready(function () {
             $("#mgsError").html("<strong>O nome do autor não pode conter números :(</strong>")
             return
         }
+        
+         $("#msg_termo").val("Resultado(s) para o termo pesquisado" + autor + " " + assunto);
 
         $("#sidebar").removeClass("d-none");
         //$('#sidebar').toggleClass('active');
